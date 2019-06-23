@@ -1,5 +1,4 @@
 -- Conditions and flow control structures
-
 message = 0
 condition = -25
 
@@ -26,8 +25,22 @@ for i = 1, 3, 1 do
   pickle = (pickle + 10) * i
 end
 
+function increment(var, amount, times)
+  if not var then
+    var = 0
+  end
+
+  for j = 0, times-1, 1 do
+    var = var + amount
+  end
+  return var
+end
+
+
 function love.draw()
   love.graphics.setFont(love.graphics.newFont((50)))
   -- love.graphics.print(message)
-  love.graphics.print(pickle)
+  -- love.graphics.print(pickle)
+  value = increment(1004, 3, 45)
+  love.graphics.print(value)
 end
