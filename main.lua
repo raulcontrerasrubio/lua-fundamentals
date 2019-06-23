@@ -1,6 +1,6 @@
 -- Conditions and flow control structures
-message = 0
-condition = -25
+local message = 0
+local condition = -25
 
 if condition > 0 then
   message = 1
@@ -32,19 +32,19 @@ end
 -- @param times The number of cycles.
 -- @return A new number.
 function increment(var, amount, times)
-  if not var then
-    var = 0
-  end
+  if not var then var = 0 end
+  if not amount or not times then return var end
+  local value = var
 
   for j = 0, times-1, 1 do
-    var = var + amount
+    value = value + amount
   end
-  return var
+  return value
 end
 
 
 function printNumber()
-  love.graphics.print(increment(100, 60, 5))
+  love.graphics.print(increment(100, 40, 0))
 end
 
 function love.draw()
