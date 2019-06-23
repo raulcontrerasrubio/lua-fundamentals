@@ -47,9 +47,19 @@ function printNumber()
   love.graphics.print(increment(100, 40, 0))
 end
 
+
+-- Tables
+testScores = {95, 87, 98}
+testScores.subject = "History"
+res = 0
+for i, value in ipairs(testScores) do
+  res = res + value * i
+end
+
 function love.draw()
   love.graphics.setFont(love.graphics.newFont((50)))
   -- love.graphics.print(message)
   -- love.graphics.print(pickle)
-  printNumber()
+  -- printNumber()
+  love.graphics.print(res)
 end
