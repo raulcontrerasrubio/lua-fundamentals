@@ -13,7 +13,21 @@ else
   message = 'No conditions met!'
 end
 
+-- Loops
+num = 0
+test = 0
+while num < 10 do
+  num = num + 1
+  test = test - 5
+end
+
+pickle = 0
+for i = 1, 3, 1 do
+  pickle = (pickle + 10) * i
+end
+
 function love.draw()
   love.graphics.setFont(love.graphics.newFont((50)))
-  love.graphics.print(message)
+  -- love.graphics.print(message)
+  love.graphics.print(pickle)
 end
