@@ -25,6 +25,12 @@ for i = 1, 3, 1 do
   pickle = (pickle + 10) * i
 end
 
+--- increment(var, amount, times).
+-- Increments the variable on times * amount value.
+-- @param var The initial variable. If not provided, 0 by default.
+-- @param amount The amount to add to the variable on each cycle.
+-- @param times The number of cycles.
+-- @return A new number.
 function increment(var, amount, times)
   if not var then
     var = 0
@@ -37,10 +43,13 @@ function increment(var, amount, times)
 end
 
 
+function printNumber()
+  love.graphics.print(increment(100, 60, 5))
+end
+
 function love.draw()
   love.graphics.setFont(love.graphics.newFont((50)))
   -- love.graphics.print(message)
   -- love.graphics.print(pickle)
-  value = increment(1004, 3, 45)
-  love.graphics.print(value)
+  printNumber()
 end
